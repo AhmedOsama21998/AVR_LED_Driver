@@ -16,15 +16,11 @@ extern LED_t LED_AstrLedConfig[LED_NUM];
 extern SW_t	 Switch_AstrSwitchState[SW_NUM];
 int main(void)
 {
-	DIO_enuInit();
-	LED_enuInit(LED_AstrLedConfig);
-	Switch_enuInit(Switch_AstrSwitchState);
-	u8 state=0;
-	while(1)
+DIO_enuInit();
+LED_enuInit(LED_AstrLedConfig);
+Switch_enuInit(Switch_AstrSwitchState);
+while(1)
 	{
-		Switch_enuGetState(&Switch_AstrSwitchState[2],&state);
-		if(state==0){ LED_enuTurnOn(&LED_AstrLedConfig[2]); }
-		else 		{ LED_enuTurnOff(&LED_AstrLedConfig[2]);}
-
+		
 	}
 }
